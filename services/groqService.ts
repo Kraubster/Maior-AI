@@ -1,6 +1,5 @@
 // services/groqService.ts
 
-import Groq from "groq-sdk";
 import { Message, Sender, AppMode } from "../types";
 import { PROFESSOR_MAIOR_SYSTEM_INSTRUCTION } from "../constants";
 
@@ -87,4 +86,5 @@ export const generateResponse = async ({
     console.error("Erro na API da Groq:", error);
     throw new Error("Falha ao comunicar com o serviço de IA secundário (Groq).");
   }
+
 };
