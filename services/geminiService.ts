@@ -25,8 +25,8 @@ export const generateResponse = async ({
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
   
   if (!API_KEY) {
-    console.error('❌ API Key não encontrada! Verifica as Environment Variables no Netlify.');
-    return { text: "⚠️ Erro de configuração: API Key não encontrada. Por favor, contacta o administrador." };
+    console.error('❌ API Key não encontrada! Verifica as Environment Variables.');
+    return { text: "⚠️ Erro de configuração: Por favor, contacta o administrador." };
   }
   
   const ai = new GoogleGenAI({ apiKey: API_KEY });
@@ -119,6 +119,6 @@ export const generateResponse = async ({
 
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return { text: "Ocorreu um erro técnico ao consultar o Professor Tozé 2.0. Por favor, tenta novamente." };
+    return { text: "Ocorreu um erro técnico ao consultar o Professor, tenta novamente." };
   }
 };
