@@ -30,7 +30,7 @@ export const generateResponse = async ({
 
   if (!API_KEY) {
     console.error("❌ Chave API da Groq não encontrada!");
-    throw new Error("API Key da Groq não configurada.");
+    throw new Error("Ocorreu um Problema ao contactar a IA, por favor avise o administrador imediatamente.");
   }
 
   // IMPORTANTE: Groq não suporta imagens.
@@ -74,7 +74,7 @@ export const generateResponse = async ({
       messages: messages,
       model: MODEL_MISTRAL, // Usar o Mistral como um backup potente
       temperature: 0.7,
-      max_tokens: 4096,
+      max_tokens: 256,
     });
 
     const text = chatCompletion.choices[0]?.message?.content || "Peço desculpa, mas não consegui processar a resposta via Groq.";
@@ -88,3 +88,4 @@ export const generateResponse = async ({
   }
 
 };
+
