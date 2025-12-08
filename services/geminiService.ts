@@ -2,9 +2,9 @@ import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { PROFESSOR_MAIOR_SYSTEM_INSTRUCTION } from "../constants";
 import { Message, Sender, AppMode } from "../types";
 
-// Definição dos Modelos
+// Modelos
 const MODEL_FLASH = 'gemini-2.5-flash';
-// Mapeando "Pro" para o modelo mais avançado disponível recomendado para tarefas complexas
+// Pro para o modelo mais avançado para tarefas complexas
 const MODEL_PRO = 'gemini-2.5-pro'; 
 
 interface GenerateParams {
@@ -21,7 +21,7 @@ export const generateResponse = async ({
   previousMessages
 }: GenerateParams): Promise<{ text: string; sources?: { uri: string; title: string }[] }> => {
   
-  // ✅ CORRIGIDO: Usar import.meta.env para Vite
+
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
   
   if (!API_KEY) {
@@ -39,10 +39,10 @@ export const generateResponse = async ({
 
   // Lógica de Seleção de Modelo
   if (mode === 'giga') {
-    // Modo Giga: Usa o modelo Pro para raciocínio complexo
+    // Modo Giga usa o modelo Pro para raciocínio complexo
     selectedModel = MODEL_PRO;
     
-    // Configuração de Pensamento Profundo para o modelo Pro
+    // Budget do modelo pro
     config.thinkingConfig = { thinkingBudget: 32768 }; 
   } else {
     // Modo Standard: Usa o modelo Flash (rápido)
