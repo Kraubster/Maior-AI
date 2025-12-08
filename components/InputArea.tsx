@@ -18,7 +18,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
   const handleSend = () => {
     if ((!input.trim()) || isLoading) return;
     
-    // Trigger animation
+    // animação do gatilho
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 600);
 
@@ -37,7 +37,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
 
   return (
     <div className="fixed bottom-0 left-0 w-full pb-6 pt-2 px-4 z-30">
-      {/* Gradient fade out */}
+      {/* Gradiente fade out */}
       <div 
         className="absolute bottom-0 left-0 w-full h-[150%] pointer-events-none"
         style={{
@@ -47,10 +47,10 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
 
       <div className="max-w-3xl mx-auto relative flex items-end gap-3">
         
-        {/* Unified Input Bar Container with Intermittent Running Aura */}
+        {/* intermitente efeito de aura */}
         <div className="relative flex-1 group rounded-[2rem] overflow-hidden p-[4px]">
           
-          {/* Running Gradient Background (The Aura) - Swaps based on mode. Only visible on focus */}
+          {/* Background (Aura) - muda baseado no modo. */}
           <div 
             className={`
               absolute inset-0 transition-opacity duration-300 
@@ -59,7 +59,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
             `}
           ></div>
 
-          {/* Input Content Surface */}
+          {/* entrada do conteúdo */}
           <div 
             className="relative z-10 flex-1 flex items-center gap-2 rounded-[1.8rem] bg-[#3E3E3E] shadow-lg px-2"
             style={{
@@ -67,13 +67,13 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
               minHeight: '3rem'
             }}
           >
-            {/* Giga Mode Toggle */}
+            {/* Modo giga Ativado */}
             <button 
               onClick={() => setMode(mode === 'standard' ? 'giga' : 'standard')}
               className={`
                 w-8 h-8 rounded-full transition-all duration-500 flex items-center justify-center flex-shrink-0 ml-1
                 ${mode === 'giga' 
-                  ? 'text-[#A855F7] drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]' // Purple fill and glow
+                  ? 'text-[#A855F7] drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]' // roxo glow
                   : 'text-white/40 hover:text-white/80'
                 }
               `}
@@ -88,7 +88,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
               </svg>
             </button>
 
-            {/* Text Input */}
+            {/* texto de entrada */}
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -103,7 +103,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
           </div>
         </div>
 
-        {/* Separated Send Button with Crystalline Animation */}
+        {/* botão de enviar */}
         <button 
           onClick={handleSend}
           disabled={isLoading || !isReadyToSend}
@@ -116,7 +116,7 @@ export const InputArea: React.FC<InputAreaProps> = ({ onSend, isLoading, mode, s
             }
           `}
         >
-            {/* Reflection Layer */}
+            {/* reflexão */}
             {isAnimating && (
               <div className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -skew-x-12 animate-reflection pointer-events-none"></div>
             )}
