@@ -13,7 +13,7 @@
         color: #FFFFFF;
         -webkit-tap-highlight-color: transparent;
       }
-      /* Custom Scrollbar */
+      /* Scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -38,28 +38,28 @@
         40% { transform: scale(1); }
       }
       
-      /* Intermittent Running Aura (Gradient Border) */
+      /* Aura */
       @keyframes running-gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
 
-      /* Standard Mode Aura - #BA2D27 */
+      /* Modo Padrão Aura - #BA2D27 */
       .animate-running-aura-standard {
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), rgba(186, 45, 39, 0.6), rgba(255,255,255,0.05), transparent);
         background-size: 200% 100%;
         animation: running-gradient 3s linear infinite;
       }
 
-      /* Giga Mode Aura - #702963 */
+      /* Modo Giga Aura - #702963 */
       .animate-running-aura-giga {
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), rgba(112, 41, 99, 0.8), rgba(255,255,255,0.05), transparent);
         background-size: 200% 100%;
         animation: running-gradient 3s linear infinite;
       }
 
-      /* Crystalline Pulse for Send Button */
+      
       @keyframes crystalline-pulse {
         0% { 
           box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); 
@@ -78,7 +78,7 @@
         }
       }
       
-      /* Reflection Sweep Animation */
+      
       @keyframes reflection-sweep {
         0% { left: -100%; opacity: 0; }
         20% { opacity: 1; }
@@ -97,14 +97,14 @@
         animation: crystalline-pulse 0.6s ease-out forwards;
       }
 
-      /* Shimmer effect for Tira 20s button */
+      
       @keyframes shimmer {
         100% {
           left: 200%;
         }
       }
 
-      /* "Pretty" outline animation for Tira 20s - Neon/Electric feel */
+      
       @keyframes pretty-outline {
         0% { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0), 0 0 0 0px rgba(188, 42, 36, 0); border-color: rgba(255, 255, 255, 0.2); }
         50% { box-shadow: 0 0 10px 0px rgba(188, 42, 36, 0.2), 0 0 5px 1px rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.6); }
@@ -115,14 +115,14 @@
         animation: pretty-outline 2.5s infinite ease-in-out;
       }
 
-      /* Red Wave Animation for Placeholder */
+     
       @keyframes placeholder-red-wave {
         0%, 100% { 
           color: rgba(255, 255, 255, 0.3); 
           opacity: 0.5;
         }
         50% { 
-          color: rgba(188, 42, 36, 0.7); /* Theme Red */
+          color: rgba(188, 42, 36, 0.7);
           opacity: 0.9;
         }
       }
@@ -132,7 +132,7 @@
         transition: color 0.3s ease;
       }
 
-      /* Giga Bubble Float & Pop Animation - ERRATIC */
+      
       @keyframes giga-bubble-erratic {
         0% {
           transform: translateX(0) translateY(0) scale(0.5);
@@ -155,7 +155,7 @@
         }
       }
 
-      /* Message Entrance Animation - Ascending Scale Up */
+     
       @keyframes message-enter {
         0% {
           opacity: 0;
@@ -171,7 +171,7 @@
         animation: message-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      /* Giga Chat Bubble Pulse Glow */
+      
       @keyframes giga-chat-pulse {
         0%, 100% { 
           box-shadow: 0 0 10px -2px rgba(168, 85, 247, 0.2);
@@ -187,7 +187,7 @@
         animation: giga-chat-pulse 4s infinite ease-in-out;
       }
       
-      /* Mobile optimization */
+      /* otimização para mobile */
       input, textarea, button, select, a {
         -webkit-tap-highlight-color: transparent;
       }
