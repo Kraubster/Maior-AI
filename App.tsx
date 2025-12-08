@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { generateResponse } from './services/aiServiceRouter';
+import { generateResponse } from './services/geminiService';
 import { ChatBubble } from './components/ChatBubble';
 import { InputArea } from './components/InputArea';
 import { Message, Sender, COLORS, AppMode } from './types';
