@@ -14,12 +14,12 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message, mode, onAction 
   const [showSources, setShowSources] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  // Determine colors based on mode
+  // Determina a cor baseado no modo
   const theme = mode === 'giga' ? COLORS.giga : COLORS.standard;
   
-  // Bubbles
-  const userBg = theme.primary; // Red or Burgundy
-  const aiBg = theme.surface;   // Dark Grey or Deep Purple Surface
+  // Bolhas
+  const userBg = theme.primary; // Vermelho
+  const aiBg = theme.surface;   // roxo profundo
   
   const handleCopy = () => {
     onAction('copy', message.text);
@@ -83,7 +83,7 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message, mode, onAction 
           </div>
         )}
 
-        {/* Action Buttons for AI Messages */}
+        {/* Botões de ação para as respostas */}
         {!isUser && (
           <div className="mt-4 flex items-center gap-2 border-t border-white/10 pt-3">
              <button 
