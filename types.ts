@@ -31,15 +31,15 @@ export interface ChatState {
 
 export const COLORS = {
   standard: {
-    background: '#28282B', // Updated Matte Black
-    primary: '#BC2A24',    // Red
-    secondary: '#353535',  // Dark Grey
-    surface: '#3E3E3E',    // Slightly lighter for cards/input
+    background: '#28282B',
+    primary: '#BC2A24',
+    secondary: '#353535',
+    surface: '#3E3E3E',
     text: '#FFFFFF'
   },
   giga: {
-    background: '#28282B', // Updated Matte Black
-    primary: '#BC2A24',    // Keep Primary Red
+    background: '#28282B',
+    primary: '#BC2A24',
     secondary: '#353535',
     surface: '#3E3E3E',
     text: '#FFFFFF'
