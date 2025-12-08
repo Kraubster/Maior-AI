@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const tira20sInputRef = useRef<HTMLInputElement>(null);
 
-  const theme = COLORS.standard; // Always use standard theme colors for background
+  const theme = COLORS.standard; // cores padrão
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -24,7 +24,7 @@ const App: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Effect to transition background color of body/html
+  // efeito do background
   useEffect(() => {
     document.body.style.backgroundColor = theme.background;
   }, [theme]);
@@ -62,7 +62,7 @@ const App: React.FC = () => {
     setIsLoading(false);
   };
 
-  // Handler specifically for "Tira 20s" feature
+  // Funcionalidade "Tira 20s"
   const handleTira20sChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -94,17 +94,17 @@ const App: React.FC = () => {
     }
   };
 
-  // Generate random bubbles for Giga Mode
+  // Geração de bolhas para o Modo giga
   const renderBubbles = () => {
     if (mode !== 'giga') return null;
     
-    // Create 25 bubbles with random properties (Increased count)
+    // Cria 25 bolhas (conta é aumentada)
     const bubbles = Array.from({ length: 25 }).map((_, i) => {
       const size = Math.random() * 4 + 2; // 2px to 6px
       const left = Math.random() * 100; // 0% to 100%
       const delay = Math.random() * 1.5; // 0s to 1.5s
-      // Shorter duration for faster, more erratic feel
-      const duration = Math.random() * 1.2 + 0.8; // 0.8s to 2.0s (Much faster)
+      // Duração curta
+      const duration = Math.random() * 1.2 + 0.8;
       
       return (
         <div
@@ -114,8 +114,8 @@ const App: React.FC = () => {
             width: `${size}px`,
             height: `${size}px`,
             left: `${left}%`,
-            bottom: '40px', // Start near input
-            backgroundColor: 'rgba(168, 85, 247, 0.5)', // Purple
+            bottom: '40px',
+            backgroundColor: 'rgba(168, 85, 247, 0.5)', // roxo
             animation: `giga-bubble-erratic ${duration}s ease-out infinite`,
             animationDelay: `-${delay}s`, 
           }}
@@ -136,7 +136,7 @@ const App: React.FC = () => {
       style={{ backgroundColor: theme.background }}
     >
       
-      {/* Giga Mode Bubbles */}
+      {/* Bolhas modo Giga */}
       {renderBubbles()}
 
       {/* Header */}
@@ -153,7 +153,7 @@ const App: React.FC = () => {
             </div>
           </div>
           
-          {/* Tira 20s Button (Top Right) */}
+          {/* Tira 20s Botão */}
           <button 
             onClick={() => tira20sInputRef.current?.click()}
             className={`
@@ -176,7 +176,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Chat Area */}
+      {/* Chat */}
       <main className="flex-1 overflow-y-auto px-4 pb-32 pt-24 z-10 max-w-3xl mx-auto w-full custom-scrollbar">
         
         {messages.map((msg) => (
